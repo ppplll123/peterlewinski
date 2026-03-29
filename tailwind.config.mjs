@@ -5,12 +5,14 @@ export default {
     extend: {
       colors: {
         bg: {
-          primary: '#08080C',
-          secondary: '#0E0F14',
-          tertiary: '#13141A',
-          card: '#16171F',
-          elevated: '#1C1D27',
-          glass: 'rgba(22, 23, 31, 0.7)',
+          primary: '#0B1121',      // warm dark navy (was cold #08080C)
+          secondary: '#101828',     // slightly lighter navy
+          tertiary: '#162036',      // card-level navy
+          card: '#1A2540',          // warm card surface
+          elevated: '#213050',      // elevated elements
+          glass: 'rgba(16, 24, 40, 0.75)',
+          cream: '#F8F5EE',         // warm cream for contrast sections
+          'cream-dark': '#EDE8DC',  // slightly darker cream
         },
         gold: {
           50: '#FEF9EC',
@@ -31,12 +33,15 @@ export default {
         },
         text: {
           primary: '#F0EDE6',
-          secondary: '#9B97A0',
-          muted: '#5F5C66',
+          secondary: '#A8B2C1',     // warmer secondary (was cold gray)
+          muted: '#6B7A90',         // warmer muted
+          dark: '#1A2540',          // for cream sections
+          'dark-secondary': '#4A5568', // for cream sections
         },
         accent: {
-          blue: '#3D5A99',
+          blue: '#3D6CB5',          // slightly warmer blue
           warm: '#C17F4E',
+          navy: '#0B1121',
         },
       },
       fontFamily: {
@@ -62,19 +67,21 @@ export default {
         section: 'clamp(6rem, 14vw, 10rem)',
       },
       borderColor: {
-        subtle: 'rgba(212, 165, 32, 0.1)',
-        'subtle-strong': 'rgba(212, 165, 32, 0.2)',
+        subtle: 'rgba(212, 165, 32, 0.15)',
+        'subtle-strong': 'rgba(212, 165, 32, 0.3)',
       },
       backgroundImage: {
         'gold-gradient':
           'linear-gradient(135deg, #D4A520 0%, #F2DFA7 40%, #D4A520 70%, #E8C665 100%)',
-        'dark-fade': 'linear-gradient(to bottom, transparent 0%, #08080C 100%)',
+        'dark-fade': 'linear-gradient(to bottom, transparent 0%, #0B1121 100%)',
         'card-shine':
-          'linear-gradient(135deg, rgba(212,165,32,0.06) 0%, transparent 40%, rgba(212,165,32,0.03) 100%)',
+          'linear-gradient(135deg, rgba(212,165,32,0.1) 0%, transparent 40%, rgba(212,165,32,0.05) 100%)',
         'section-glow':
-          'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,165,32,0.06) 0%, transparent 70%)',
+          'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,165,32,0.08) 0%, transparent 70%)',
         'hero-mesh':
-          'radial-gradient(ellipse 60% 40% at 70% 30%, rgba(212,165,32,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 20% 60%, rgba(61,90,153,0.05) 0%, transparent 60%)',
+          'radial-gradient(ellipse 60% 40% at 70% 30%, rgba(212,165,32,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 20% 60%, rgba(61,108,181,0.08) 0%, transparent 60%)',
+        'cream-gradient':
+          'linear-gradient(180deg, #F8F5EE 0%, #EDE8DC 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',

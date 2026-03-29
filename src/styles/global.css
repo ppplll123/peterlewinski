@@ -1,6 +1,6 @@
 /* ============================================
    DR. PETER LEWINSKI — GLOBAL STYLES
-   Rich dark luxury editorial
+   Warm dark navy + bold gold editorial
    ============================================ */
 
 @import '@fontsource/cormorant-garamond/400.css';
@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  background-color: #08080C;
+  background-color: #0B1121;
   color: #F0EDE6;
   font-family: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
@@ -29,15 +29,15 @@ body {
 }
 
 ::selection {
-  background-color: rgba(212, 165, 32, 0.35);
+  background-color: rgba(212, 165, 32, 0.4);
   color: #F0EDE6;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #08080C; }
-::-webkit-scrollbar-thumb { background: rgba(212, 165, 32, 0.25); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 32, 0.5); }
+::-webkit-scrollbar-track { background: #0B1121; }
+::-webkit-scrollbar-thumb { background: rgba(212, 165, 32, 0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 32, 0.6); }
 
 /* ============================================
    GOLD TEXT — the signature effect
@@ -57,21 +57,34 @@ body {
 }
 
 /* ============================================
-   CARD STYLES — glass + glow
+   CARD STYLES — glass + glow (warmer)
    ============================================ */
 .card-glass {
-  background: linear-gradient(135deg, rgba(22,23,31,0.9) 0%, rgba(28,29,39,0.6) 100%);
+  background: linear-gradient(135deg, rgba(16,24,40,0.95) 0%, rgba(26,37,64,0.7) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 165, 32, 0.08);
+  border: 1px solid rgba(212, 165, 32, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-glass:hover {
-  border-color: rgba(212, 165, 32, 0.2);
+  border-color: rgba(212, 165, 32, 0.3);
   box-shadow:
-    0 0 40px rgba(212, 165, 32, 0.06),
+    0 0 40px rgba(212, 165, 32, 0.08),
     0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Cream card — for light sections */
+.card-cream {
+  background: white;
+  border: 1px solid rgba(212, 165, 32, 0.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-cream:hover {
+  border-color: rgba(212, 165, 32, 0.4);
+  box-shadow: 0 8px 40px rgba(212, 165, 32, 0.1), 0 4px 24px rgba(0,0,0,0.08);
   transform: translateY(-2px);
 }
 
@@ -80,9 +93,9 @@ body {
 }
 .card-glow:hover {
   box-shadow:
-    0 0 30px rgba(212, 165, 32, 0.08),
+    0 0 30px rgba(212, 165, 32, 0.1),
     0 15px 50px rgba(0, 0, 0, 0.25);
-  border-color: rgba(212, 165, 32, 0.2);
+  border-color: rgba(212, 165, 32, 0.3);
   transform: translateY(-2px);
 }
 
@@ -91,23 +104,23 @@ body {
    ============================================ */
 .gold-underline {
   text-decoration: none;
-  background-image: linear-gradient(rgba(212, 165, 32, 0.5), rgba(212, 165, 32, 0.5));
-  background-size: 0% 1px;
+  background-image: linear-gradient(rgba(212, 165, 32, 0.6), rgba(212, 165, 32, 0.6));
+  background-size: 0% 2px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.3s ease;
 }
-.gold-underline:hover { background-size: 100% 1px; }
+.gold-underline:hover { background-size: 100% 2px; }
 
 /* ============================================
    SECTION DIVIDER — luminous gold line
    ============================================ */
 .section-divider {
   width: 80px;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, #D4A520, #F2DFA7, #D4A520, transparent);
   margin: 0 auto;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 /* ============================================
@@ -124,7 +137,7 @@ body {
   transform: translateX(-50%);
   width: 80%;
   height: 200px;
-  background: radial-gradient(ellipse at center top, rgba(212, 165, 32, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center top, rgba(212, 165, 32, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -132,20 +145,46 @@ body {
    NOISE TEXTURE — visible grain
    ============================================ */
 
-/* Body grain — persistent subtle texture */
+/* Body grain — subtle texture */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  opacity: 0.035;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
 }
 
 /* Section background variations */
-.section-dark { background: #050507; }
-.section-lighter { background: linear-gradient(180deg, #0E0F14 0%, #08080C 100%); }
+.section-dark { background: #081020; }
+.section-lighter { background: linear-gradient(180deg, #101828 0%, #0B1121 100%); }
+
+/* CREAM sections — warm light contrast */
+.section-cream {
+  background: linear-gradient(180deg, #F8F5EE 0%, #F0EBE0 100%);
+  color: #1A2540;
+}
+.section-cream h2,
+.section-cream h3,
+.section-cream h4 {
+  color: #0B1121;
+}
+.section-cream .text-text-secondary,
+.section-cream .text-text-muted {
+  color: #5A6577;
+}
+.section-cream .text-gold-500 {
+  color: #B8891A;
+}
+.section-cream .font-mono {
+  color: #966D16;
+}
+
+/* Navy accent section — rich contrast */
+.section-navy {
+  background: linear-gradient(135deg, #0C1830 0%, #162040 50%, #0E1A35 100%);
+}
 
 .noise-overlay {
   position: relative;
@@ -154,7 +193,7 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.06;
+  opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
@@ -198,12 +237,20 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #D4A520;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 .evidence-badge:hover {
   opacity: 1;
   color: #F2DFA7;
+}
+
+/* Evidence badge for cream sections */
+.section-cream .evidence-badge {
+  color: #966D16;
+}
+.section-cream .evidence-badge:hover {
+  color: #7A5813;
 }
 
 /* ============================================
@@ -214,8 +261,8 @@ body::before {
 }
 .card-lift:hover {
   transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 0 30px rgba(212, 165, 32, 0.06), 0 20px 60px rgba(0, 0, 0, 0.25);
-  border-color: rgba(212, 165, 32, 0.2);
+  box-shadow: 0 0 30px rgba(212, 165, 32, 0.08), 0 20px 60px rgba(0, 0, 0, 0.25);
+  border-color: rgba(212, 165, 32, 0.25);
 }
 
 /* Publication row hover — gold slide indicator */
@@ -229,8 +276,8 @@ body::before {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: #D4A520;
+  width: 3px;
+  background: linear-gradient(to bottom, #D4A520, #F2DFA7);
   transform: scaleY(0);
   transition: transform 0.3s ease;
   transform-origin: top;
@@ -250,16 +297,16 @@ body::before {
    STAT PILL — for metrics
    ============================================ */
 .stat-pill {
-  background: linear-gradient(135deg, rgba(212,165,32,0.1) 0%, rgba(212,165,32,0.03) 100%);
-  border: 1px solid rgba(212, 165, 32, 0.12);
+  background: linear-gradient(135deg, rgba(212,165,32,0.12) 0%, rgba(212,165,32,0.04) 100%);
+  border: 1px solid rgba(212, 165, 32, 0.18);
   border-radius: 12px;
   padding: 1.25rem 1rem;
   text-align: center;
   transition: all 0.3s ease;
 }
 .stat-pill:hover {
-  border-color: rgba(212, 165, 32, 0.25);
-  background: linear-gradient(135deg, rgba(212,165,32,0.15) 0%, rgba(212,165,32,0.05) 100%);
+  border-color: rgba(212, 165, 32, 0.35);
+  background: linear-gradient(135deg, rgba(212,165,32,0.2) 0%, rgba(212,165,32,0.08) 100%);
 }
 
 /* ============================================
@@ -272,11 +319,11 @@ body::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 20%;
-  height: 60%;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, #D4A520, transparent);
-  border-radius: 1px;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #D4A520, #F2DFA7, #D4A520, transparent);
+  border-radius: 2px;
 }
 
 /* ============================================
@@ -285,7 +332,7 @@ body::before {
 .gradient-border {
   position: relative;
   border: none;
-  background: #16171F;
+  background: #1A2540;
   overflow: hidden;
 }
 .gradient-border::before {
@@ -294,9 +341,42 @@ body::before {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(212,165,32,0.3), transparent 50%, rgba(212,165,32,0.15));
+  background: linear-gradient(135deg, rgba(212,165,32,0.4), transparent 50%, rgba(212,165,32,0.2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+/* ============================================
+   CREAM SECTION CARD OVERRIDES
+   ============================================ */
+.section-cream .card-glass {
+  background: white;
+  border: 1px solid rgba(212, 165, 32, 0.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  backdrop-filter: none;
+}
+.section-cream .card-glass:hover {
+  border-color: rgba(212, 165, 32, 0.45);
+  box-shadow: 0 8px 40px rgba(212, 165, 32, 0.08), 0 4px 24px rgba(0,0,0,0.08);
+}
+.section-cream .gold-left-accent::before {
+  background: linear-gradient(to bottom, transparent, #B8891A, #D4A520, #B8891A, transparent);
+}
+.section-cream .section-glow::before {
+  background: radial-gradient(ellipse at center top, rgba(212, 165, 32, 0.06) 0%, transparent 70%);
+}
+
+/* Cream section text overrides */
+.section-cream .text-text-primary {
+  color: #0B1121;
+}
+.section-cream p,
+.section-cream li,
+.section-cream span:not(.text-gold-500):not(.text-champagne):not([class*="text-gold"]) {
+  color: #3A4560;
+}
+.section-cream .text-champagne {
+  color: #966D16;
 }

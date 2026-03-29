@@ -19,23 +19,41 @@ import Footer from '../components/Footer.astro';
   <Nav />
   <main>
     <Hero />
-    <About />
+    <!-- CREAM: About — warm contrast after dark hero -->
+    <div class="section-cream">
+      <About />
+    </div>
+    <!-- DARK: Transformations -->
     <div class="section-lighter">
       <Transformations />
     </div>
-    <Career />
-    <div class="section-lighter">
+    <!-- CREAM: Career — warm, readable -->
+    <div class="section-cream">
+      <Career />
+    </div>
+    <!-- DARK: Research -->
+    <div class="section-navy">
       <Research />
     </div>
-    <Education />
+    <!-- CREAM: Education -->
+    <div class="section-cream">
+      <Education />
+    </div>
+    <!-- DARK: Sports — dramatic -->
     <div class="section-dark">
       <Sports />
     </div>
+    <!-- DARK: Lifestyle — dark with neon accents -->
     <Lifestyle />
-    <div class="section-dark">
+    <!-- CREAM: Watches -->
+    <div class="section-cream">
       <Watches />
     </div>
-    <Cars />
+    <!-- DARK: Cars -->
+    <div class="section-dark">
+      <Cars />
+    </div>
+    <!-- DARK: Contact -->
     <Contact />
   </main>
   <Footer />
