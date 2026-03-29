@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Transformations from '../components/Transformations.astro';
+import Career from '../components/Career.astro';
+import Research from '../components/Research.astro';
+import Education from '../components/Education.astro';
+import Sports from '../components/Sports.astro';
+import Lifestyle from '../components/Lifestyle.astro';
+import Watches from '../components/Watches.astro';
+import Cars from '../components/Cars.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Nav />
+  <main>
+    <Hero />
+    <About />
+    <div class="section-lighter">
+      <Transformations />
+    </div>
+    <Career />
+    <div class="section-lighter">
+      <Research />
+    </div>
+    <Education />
+    <div class="section-dark">
+      <Sports />
+    </div>
+    <Lifestyle />
+    <div class="section-dark">
+      <Watches />
+    </div>
+    <Cars />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

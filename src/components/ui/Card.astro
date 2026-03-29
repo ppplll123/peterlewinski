@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  number?: string;
+  class?: string;
+}
+
+const { title, number, class: className = '' } = Astro.props;
+---
+
+<div class={`
+  card-glass rounded-xl p-6 md:p-8
+  relative overflow-hidden group
+  ${className}
+`}>
+  {number && (
+    <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">
+      {number}
+    </span>
+  )}
+  <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-4 group-hover:text-champagne transition-colors duration-300">
+    {title}
+  </h3>
+  <div class="text-text-secondary text-sm md:text-base leading-relaxed space-y-3">
+    <slot />
+  </div>
+  <!-- Corner accent -->
+  <div class="absolute top-0 right-0 w-20 h-20 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+    <div class="w-full h-full" style="background: linear-gradient(135deg, #D4A520, #F2DFA7); clip-path: polygon(100% 0, 0 0, 100% 100%);"></div>
+  </div>
+  <!-- Bottom edge glow on hover -->
+  <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+</div>

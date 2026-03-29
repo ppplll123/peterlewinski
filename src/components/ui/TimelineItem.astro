@@ -1,0 +1,33 @@
+---
+interface Props {
+  dates: string;
+  company: string;
+  title: string;
+  location: string;
+}
+
+const { dates, company, title, location } = Astro.props;
+---
+
+<div class="relative pl-8 md:pl-12 pb-12 last:pb-0 group reveal">
+  <!-- Timeline line -->
+  <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-gold-500/30 via-gold-500/10 to-transparent"></div>
+
+  <!-- Timeline dot with glow -->
+  <div class="absolute left-[-5px] top-1 w-[11px] h-[11px] rounded-full bg-bg-primary border-2 border-gold-500/40 group-hover:border-gold-500 group-hover:shadow-[0_0_12px_rgba(212,165,32,0.3)] transition-all duration-300"></div>
+
+  <!-- Content -->
+  <div class="card-glass rounded-xl p-5 md:p-6">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
+      <span class="font-mono text-xs text-gold-500 tracking-wider uppercase">{dates}</span>
+      <span class="text-xs text-text-muted">{location}</span>
+    </div>
+    <h3 class="font-display text-lg md:text-xl font-semibold text-text-primary mb-1">
+      {company}
+    </h3>
+    <p class="text-sm text-champagne/70 italic mb-3">{title}</p>
+    <div class="text-text-secondary text-sm leading-relaxed space-y-2">
+      <slot />
+    </div>
+  </div>
+</div>

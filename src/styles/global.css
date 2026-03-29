@@ -1,0 +1,302 @@
+/* ============================================
+   DR. PETER LEWINSKI — GLOBAL STYLES
+   Rich dark luxury editorial
+   ============================================ */
+
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #08080C;
+  color: #F0EDE6;
+  font-family: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(212, 165, 32, 0.35);
+  color: #F0EDE6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #08080C; }
+::-webkit-scrollbar-thumb { background: rgba(212, 165, 32, 0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 32, 0.5); }
+
+/* ============================================
+   GOLD TEXT — the signature effect
+   ============================================ */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4A520 0%, #F2DFA7 35%, #E8C665 60%, #D4A520 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 4s ease-in-out infinite;
+}
+
+@keyframes goldShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ============================================
+   CARD STYLES — glass + glow
+   ============================================ */
+.card-glass {
+  background: linear-gradient(135deg, rgba(22,23,31,0.9) 0%, rgba(28,29,39,0.6) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 165, 32, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glass:hover {
+  border-color: rgba(212, 165, 32, 0.2);
+  box-shadow:
+    0 0 40px rgba(212, 165, 32, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-glow:hover {
+  box-shadow:
+    0 0 30px rgba(212, 165, 32, 0.08),
+    0 15px 50px rgba(0, 0, 0, 0.25);
+  border-color: rgba(212, 165, 32, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   GOLD UNDERLINE — expanding on hover
+   ============================================ */
+.gold-underline {
+  text-decoration: none;
+  background-image: linear-gradient(rgba(212, 165, 32, 0.5), rgba(212, 165, 32, 0.5));
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.gold-underline:hover { background-size: 100% 1px; }
+
+/* ============================================
+   SECTION DIVIDER — luminous gold line
+   ============================================ */
+.section-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4A520, #F2DFA7, #D4A520, transparent);
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+/* ============================================
+   SECTION GLOW — top radial glow for sections
+   ============================================ */
+.section-glow {
+  position: relative;
+}
+.section-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 200px;
+  background: radial-gradient(ellipse at center top, rgba(212, 165, 32, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============================================
+   NOISE TEXTURE — visible grain
+   ============================================ */
+
+/* Body grain — persistent subtle texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Section background variations */
+.section-dark { background: #050507; }
+.section-lighter { background: linear-gradient(180deg, #0E0F14 0%, #08080C 100%); }
+
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================
+   SCROLL REVEAL — staggered fade-in
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   EVIDENCE BADGE
+   ============================================ */
+.evidence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #D4A520;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.evidence-badge:hover {
+  opacity: 1;
+  color: #F2DFA7;
+}
+
+/* ============================================
+   ENHANCED HOVER — scale + glow for cards
+   ============================================ */
+.card-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-lift:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 30px rgba(212, 165, 32, 0.06), 0 20px 60px rgba(0, 0, 0, 0.25);
+  border-color: rgba(212, 165, 32, 0.2);
+}
+
+/* Publication row hover — gold slide indicator */
+.pub-row {
+  position: relative;
+  overflow: hidden;
+}
+.pub-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #D4A520;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: top;
+}
+.pub-row:hover::after {
+  transform: scaleY(1);
+}
+
+/* ============================================
+   PARALLAX HELPER
+   ============================================ */
+.parallax-slow {
+  will-change: transform;
+}
+
+/* ============================================
+   STAT PILL — for metrics
+   ============================================ */
+.stat-pill {
+  background: linear-gradient(135deg, rgba(212,165,32,0.1) 0%, rgba(212,165,32,0.03) 100%);
+  border: 1px solid rgba(212, 165, 32, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.stat-pill:hover {
+  border-color: rgba(212, 165, 32, 0.25);
+  background: linear-gradient(135deg, rgba(212,165,32,0.15) 0%, rgba(212,165,32,0.05) 100%);
+}
+
+/* ============================================
+   GOLD BORDER ACCENT — left bar on cards
+   ============================================ */
+.gold-left-accent {
+  position: relative;
+}
+.gold-left-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #D4A520, transparent);
+  border-radius: 1px;
+}
+
+/* ============================================
+   GRADIENT BORDER — for special cards
+   ============================================ */
+.gradient-border {
+  position: relative;
+  border: none;
+  background: #16171F;
+  overflow: hidden;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212,165,32,0.3), transparent 50%, rgba(212,165,32,0.15));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

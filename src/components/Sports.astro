@@ -1,0 +1,44 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import EvidenceLink from './ui/EvidenceLink.astro';
+---
+
+<section id="sports" class="py-section px-6 md:px-10 max-w-5xl mx-auto relative">
+  <!-- Dramatic accent -->
+  <div class="absolute top-[10%] left-0 w-[300px] h-[300px] bg-accent-warm/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
+
+  <SectionTitle title="Black Belt" subtitle="Judo, 1st Dan. 200+ international and national competitions." />
+
+  <div class="grid md:grid-cols-2 gap-5 reveal-stagger">
+    <!-- Judo -->
+    <div class="card-glass rounded-xl p-6 md:p-8 gold-left-accent">
+      <div class="font-mono text-[10px] text-gold-500 tracking-[0.2em] uppercase mb-5">Judo</div>
+      <ul class="space-y-3.5 text-sm text-text-secondary">
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>Black Belt, 1st Dan</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>2x National Judo Team Vice-Champion</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>200+ international and national competitions</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>Oxford University Judo Club — Winning team member of the Varsity Match vs Cambridge <span class="text-champagne">(won by Ippon in under 10 seconds)</span></span></li>
+      </ul>
+      <div class="mt-5">
+        <EvidenceLink href="https://oxfordbluebird.com/the-varsity-judo-match-report/" label="Oxford Varsity Match Report" />
+      </div>
+    </div>
+
+    <!-- Other sports -->
+    <div class="card-glass rounded-xl p-6 md:p-8 gold-left-accent">
+      <div class="font-mono text-[10px] text-gold-500 tracking-[0.2em] uppercase mb-5">Other Athletics</div>
+      <ul class="space-y-3.5 text-sm text-text-secondary">
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>Oxford Lincoln College Boat Club (Rower M4)</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>U.S. State (Oregon) Finals, 4x400 Relay, 2009</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>Amateur Golfer (HCP 45)</span></li>
+        <li class="flex items-start gap-2"><span class="text-gold-500 text-[8px] mt-1">&#9670;</span> <span>Strong Viking Brother Edition Run</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Photo placeholder -->
+  <div class="mt-8 card-glass rounded-xl p-16 text-center text-text-muted text-sm border-dashed border border-gold-500/10 reveal">
+    <div class="text-3xl mb-3 opacity-30">🥋</div>
+    <p class="text-xs">Judo competition photos — upload to <code class="text-gold-500/60 font-mono">/src/assets/images/</code></p>
+  </div>
+</section>

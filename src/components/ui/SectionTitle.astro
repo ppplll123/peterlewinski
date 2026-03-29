@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+}
+
+const { title, subtitle, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center' : 'text-left';
+---
+
+<div class={`mb-16 reveal ${alignClass}`}>
+  <h2 class="font-display text-section font-semibold text-text-primary mb-4">
+    {title}
+  </h2>
+  {subtitle && (
+    <p class={`text-subtitle text-text-secondary max-w-2xl leading-relaxed ${align === 'center' ? 'mx-auto' : ''}`}>
+      {subtitle}
+    </p>
+  )}
+  <div class={`section-divider mt-6 ${align === 'left' ? 'mx-0 ml-0' : ''}`}
+       style={align === 'left' ? 'margin-left: 0;' : ''}></div>
+</div>

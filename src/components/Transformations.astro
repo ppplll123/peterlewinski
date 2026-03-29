@@ -1,0 +1,157 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import EvidenceLink from './ui/EvidenceLink.astro';
+---
+
+<section id="transformations" class="py-section px-6 md:px-10 max-w-7xl mx-auto relative">
+  <!-- Background accent -->
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gold-500/[0.03] rounded-full blur-[120px] pointer-events-none"></div>
+
+  <SectionTitle title="What I've Done" subtitle="Each of these is independently verifiable. Evidence links on each card." />
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
+    <!-- Card 1 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">01</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            PhD by Age 25
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Finished 5-year PhD in 2.5 years from world top 1 department (QS Ranking). 10 publications in top journals (3x the average). While working full-time at an A.I. firm, leading 6 interns, and pursuing a 2nd bachelor's degree.</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <EvidenceLink href="https://scholar.google.com/citations?user=EzMytF4AAAAJ" label="Google Scholar" />
+            <EvidenceLink href="https://dare.uva.nl/" label="UvA-DARE Thesis" />
+          </div>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">02</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            Director by Age 26
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Became Deputy Director in credit risk modeling at ING Bank in an extremely technical field without prior IT & programming background. Simultaneously tenure-track Assistant Professor at top 45 FT-Ranking business school.</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <EvidenceLink href="https://www.linkedin.com/in/peterlewinski-phd" label="LinkedIn" />
+          </div>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">03</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            8 Degrees, 4 Languages, Age 31
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Two Bachelors, Four Masters, PhD, Postdoc, Assistant Professor, and Executive MBA. In English, Spanish, Dutch, and Polish. From 6 different countries (UK, USA, Netherlands, Poland, Spain, Switzerland). While working full-time.</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <EvidenceLink href="#education" label="View Diplomas" />
+          </div>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">04</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            Three 5-Year Degrees in 2.5 Years
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>900 ECTS completed in half the normal time. On the way to finishing 100+ courses across 20 universities.</p>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">05</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            Top 2 Most Cited in Niche
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Publications account for 60% of all citations in a specific marketing niche out of 1000s of publications in Google Scholar. Cumulative Impact Factor: 33.49 per Clarivate JCR.</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <EvidenceLink href="https://scholar.google.com/citations?user=EzMytF4AAAAJ" label="Google Scholar Citations" />
+          </div>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">06</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            Startup: €1M to €2M in 14 Months
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Company stagnant for 7 years prior. Increased profit margins from 5% to 26%. Grew team, products, and deployments across 6 countries.</p>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <EvidenceLink href="https://chatgptleads.page/peter" label="Case Studies" />
+          </div>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card-glass rounded-xl p-6 md:p-8 relative overflow-hidden group">
+      <span class="font-mono text-xs text-gold-500/40 group-hover:text-gold-500/70 transition-colors mb-3 block tracking-wider">07</span>
+      <details class="transform-card">
+        <summary class="cursor-pointer list-none">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-text-primary mb-2 group-hover:text-champagne transition-colors flex items-center justify-between">
+            House at Age 22, €0 Cash
+            <svg class="w-4 h-4 text-gold-500/40 transform transition-transform details-arrow flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </h3>
+        </summary>
+        <div class="text-text-secondary text-sm leading-relaxed space-y-3 mt-3">
+          <p>Purchased property at age 22 with zero cash upfront and made €300K on the deal.</p>
+        </div>
+      </details>
+      <div class="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-gold-500/0 to-transparent group-hover:via-gold-500/30 transition-all duration-500"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  details[open] .details-arrow {
+    transform: rotate(180deg);
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

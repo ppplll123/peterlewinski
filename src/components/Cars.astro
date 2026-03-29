@@ -1,0 +1,54 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+---
+
+<section id="cars" class="py-section px-6 md:px-10 max-w-5xl mx-auto relative">
+  <!-- Subtle warm accent -->
+  <div class="absolute top-[20%] right-0 w-[300px] h-[300px] bg-accent-warm/[0.04] rounded-full blur-[100px] pointer-events-none"></div>
+
+  <SectionTitle title="Garage" />
+
+  <div class="grid md:grid-cols-5 gap-8 items-center reveal">
+    <!-- Description -->
+    <div class="md:col-span-2">
+      <div class="font-mono text-[10px] text-gold-500 tracking-[0.2em] uppercase mb-3">Dubai, UAE</div>
+      <h3 class="font-display text-3xl md:text-4xl font-semibold text-text-primary mb-2">
+        Mercedes-AMG
+      </h3>
+      <h3 class="font-display text-3xl md:text-4xl font-semibold text-champagne mb-6">
+        G63 Brabus
+      </h3>
+      <p class="text-text-secondary text-sm leading-relaxed mb-8">
+        The Brabus-tuned G-Wagon. V8 Biturbo with Brabus power upgrade.
+        Dubai UAE plates.
+      </p>
+      <div class="flex gap-8">
+        {[
+          { value: 'V8', label: 'Biturbo' },
+          { value: 'Brabus', label: 'Tuned' },
+          { value: 'UAE', label: 'Registered' },
+        ].map((s) => (
+          <div class="text-center">
+            <div class="font-mono text-lg text-gold-500 font-semibold">{s.value}</div>
+            <div class="text-[10px] text-text-muted uppercase tracking-wider mt-0.5">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Photo placeholder -->
+    <div class="md:col-span-3 relative rounded-xl overflow-hidden aspect-video group md:-mt-8">
+      <div class="absolute inset-0 bg-bg-card"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-accent-warm/[0.05] via-transparent to-gold-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div class="relative z-10 flex items-center justify-center h-full">
+        <div class="text-center text-text-muted">
+          <div class="text-5xl mb-4 opacity-20">🏎️</div>
+          <p class="text-sm">G63 Brabus photo</p>
+          <p class="text-[10px] mt-1 font-mono text-gold-500/40">src/assets/images/g63-brabus.webp</p>
+        </div>
+      </div>
+      <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold-500/20"></div>
+      <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold-500/20"></div>
+    </div>
+  </div>
+</section>

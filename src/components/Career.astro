@@ -1,0 +1,127 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+import EvidenceLink from './ui/EvidenceLink.astro';
+
+const roles = [
+  {
+    dates: 'Feb 2024 — Present',
+    company: 'ChatGPT Leads',
+    title: 'Chief Executive Officer & Founder',
+    location: 'Chicago, USA / Dubai, UAE',
+    content: `<p>1-person company generating $0.5M+ post-tax profit in 5 minutes a day using A.I. Personally executed 50+ inside sales demos for US high-net-worth individuals on a $1M product. Created entire pipeline and automation with LLMs and agents. Managed $300k+ performance budget generating 4,500+ MQLs across B2B/B2C verticals.</p>`,
+    links: [{ href: 'https://chatgptleads.page/peter', label: 'Case Studies' }],
+  },
+  {
+    dates: 'Jan 2018 — Feb 2024',
+    company: 'Sentient Machine Research Group B.V.',
+    title: 'Chief Executive Officer',
+    location: 'Amsterdam / London / Ontario',
+    content: `<p><strong class="text-text-primary">Turnaround:</strong> Grew revenues from €1M to €2M (40% CAGR) in 24 months, profit margins from 5% to 26% (vs. 7-year stagnation). Managed 25 cross-functional staff.</p><p><strong class="text-text-primary">Law Enforcement AI:</strong> Sold and delivered AI investigating financial crime to Canada Revenue Agency, UK HMRC, Swedish Tax Agency, SKAT Denmark, FOD Belgium.</p><p><strong class="text-text-primary">Computer Vision:</strong> Grew FaceReader SDK from 0 to €150k in 6 months. Scaled VicarAnalytics from €1M to €2M in 4 months.</p><p><strong class="text-text-primary">Clients:</strong> Microsoft, Accenture, AB InBev, Kaspersky Lab, Ipsos, Stanford, Oxford, Harvard.</p>`,
+    links: [{ href: 'https://www.smr.nl/', label: 'SMR Group' }, { href: 'https://en.wikipedia.org/wiki/Xenon_(program)', label: 'Xenon (Wikipedia)' }],
+  },
+  {
+    dates: 'Jul 2020 — Jul 2021',
+    company: 'Salesprocess.io Canada Corp.',
+    title: 'Management Team (Sales Ops)',
+    location: 'Toronto, Ontario',
+    content: `<p>Revenue: $350k to $1.1M p.m. ($13M p.a). Team: 40 to 80 SDRs, AEs, CS. Referral partnerships: 19 to 37. Platform users: 2.5k to 3.8k. E2E responsible for 40 sales/marketing tools.</p>`,
+    links: [],
+  },
+  {
+    dates: 'Jan 2016 — Jan 2018',
+    company: 'ING Bank (Śląski) S.A.',
+    title: 'Deputy Director, Credit Risk Modelling',
+    location: 'Warsaw / Amsterdam',
+    content: `<p>Product Owner for 10 data analysts building regulation-compliant ML models on €19.2bn loan portfolio. Decreased credit loss from 5.2% to 1.7%, earning up to 30% additional annual profit. Maintained 60 SAS risk models.</p><p>Fintech SPOC for entire &lt;300-staff Risk unit. Led CVC due diligence for 20% stake in Twisto.cz (BNPL). Invited by Board of Management as 1 of 5 presenters to top 150 managers.</p>`,
+    links: [{ href: 'https://www.linkedin.com/in/peterlewinski-phd', label: 'LinkedIn' }],
+  },
+  {
+    dates: 'Jul 2018',
+    company: 'FriendlyScore UK Ltd.',
+    title: 'Summer Associate',
+    location: 'Mayfair, London',
+    content: `<p>Drafted proposals and contracts for 8 clients (banks and credit bureaus) totaling ~£15M for this VC-backed alternative data credit scoring fintech.</p>`,
+    links: [],
+  },
+  {
+    dates: 'Sep 2012 — Jan 2016',
+    company: 'Vicarious Perception Technologies B.V.',
+    title: 'AI Product Specialist',
+    location: 'Amsterdam',
+    content: `<p>Proposed and implemented 5 new automated statistical analysis modules for FaceReader, the world-leading facial expression analysis software (1,000+ B2B clients including Fortune 500). Managed 6 interns across 12 projects analyzing 10M+ data points.</p>`,
+    links: [{ href: 'https://vicarvision.nl/about/company/', label: 'VicarVision' }],
+  },
+];
+---
+
+<section id="career" class="py-section px-6 md:px-10 max-w-5xl mx-auto relative section-glow">
+  <SectionTitle title="Career" />
+
+  <!-- Alternating timeline -->
+  <div class="relative reveal">
+    <!-- Center spine -->
+    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold-500/30 via-gold-500/10 to-transparent -translate-x-1/2"></div>
+
+    {roles.map((role, i) => {
+      const isLeft = i % 2 === 0;
+      return (
+        <div class={`relative mb-10 last:mb-0 md:flex ${isLeft ? 'md:justify-start' : 'md:justify-end'}`}>
+          {/* Center dot */}
+          <div class="hidden md:block absolute left-1/2 top-6 w-3 h-3 rounded-full bg-bg-primary border-2 border-gold-500/40 hover:border-gold-500 hover:shadow-[0_0_12px_rgba(212,165,32,0.3)] transition-all -translate-x-1/2 z-10"></div>
+
+          {/* Date on spine (opposite side) */}
+          <div class={`hidden md:block absolute top-6 ${isLeft ? 'left-[calc(50%+24px)]' : 'right-[calc(50%+24px)]'} ${isLeft ? 'text-left' : 'text-right'}`}>
+            <span class="font-mono text-[10px] text-gold-500 tracking-wider uppercase whitespace-nowrap">{role.dates}</span>
+          </div>
+
+          {/* Card */}
+          <div class={`card-glass rounded-xl p-5 md:p-6 md:w-[calc(50%-32px)] ${isLeft ? '' : ''}`}>
+            <span class="md:hidden font-mono text-xs text-gold-500 tracking-wider uppercase block mb-2">{role.dates}</span>
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs text-text-muted">{role.location}</span>
+            </div>
+            <h3 class="font-display text-lg md:text-xl font-semibold text-text-primary mb-1">{role.company}</h3>
+            <p class="text-sm text-champagne/70 italic mb-3">{role.title}</p>
+            <div class="text-text-secondary text-sm leading-relaxed space-y-2" set:html={role.content} />
+            {role.links.length > 0 && (
+              <div class="flex flex-wrap gap-3 mt-3">
+                {role.links.map((link) => (
+                  <EvidenceLink href={link.href} label={link.label} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  /* Mobile fallback: left-aligned timeline */
+  @media (max-width: 767px) {
+    [id="career"] .relative > div {
+      padding-left: 2rem;
+    }
+    [id="career"] .relative > div::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(212,165,32,0.3), rgba(212,165,32,0.05));
+    }
+    [id="career"] .relative > div::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0.5rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #08080C;
+      border: 2px solid rgba(212,165,32,0.4);
+    }
+  }
+</style>

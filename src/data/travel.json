@@ -1,0 +1,74 @@
+{
+  "stats": {
+    "hotelNights2025": "315+",
+    "countries": "30+",
+    "continents": 6
+  },
+  "hotels": [
+    {
+      "program": "Marriott Bonvoy",
+      "status": "Ambassador Elite",
+      "detail": "~200 nights, $25k+ annual spend",
+      "color": "#E53E3E"
+    },
+    {
+      "program": "Hyatt",
+      "status": "Globalist",
+      "detail": "100 nights, 100 nights in suites",
+      "color": "#4299E1"
+    },
+    {
+      "program": "IHG",
+      "status": "Diamond",
+      "detail": "$75k spent via Chase Sapphire Reserve",
+      "color": "#38B2AC"
+    },
+    {
+      "program": "GHA Discovery",
+      "status": "Titanium",
+      "detail": "Status match",
+      "color": "#9F7AEA"
+    },
+    {
+      "program": "Radisson Rewards",
+      "status": "Premium",
+      "detail": "Status match",
+      "color": "#63B3ED"
+    },
+    {
+      "program": "Hilton Honors",
+      "status": "Gold",
+      "detail": "Via credit card",
+      "color": "#ECC94B"
+    }
+  ],
+  "airlines": [
+    {
+      "program": "United MileagePlus",
+      "status": "Premier Silver",
+      "alliance": "Star Alliance Silver",
+      "carriers": "United, Lufthansa, LOT, Swiss, Turkish, ANA, Singapore",
+      "color": "#667EEA"
+    },
+    {
+      "program": "SAS EuroBonus",
+      "status": "Gold",
+      "alliance": "SkyTeam Elite Plus",
+      "carriers": "KLM, Air France, Delta, ITA, Korean Air, Garuda, China Airlines, Saudia",
+      "color": "#FC8181"
+    },
+    {
+      "program": "American Airlines AAdvantage",
+      "status": "Platinum",
+      "alliance": "oneworld Sapphire",
+      "carriers": "Qatar, British Airways, Iberia, Finnair, JAL, Cathay Pacific",
+      "color": "#F6AD55"
+    }
+  ],
+  "credentials": [
+    "U.S. Global Entry + TSA PreCheck",
+    "Schiphol Privium (biometric entry, Netherlands)",
+    "Driving licenses: Motorbikes (A), Cars (B), Trucks (C)",
+    "Nationality: Dutch (EU citizen)"
+  ]
+}

@@ -1,0 +1,81 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+
+const degrees = [
+  { degree: 'Executive MBA', school: 'University of Chicago Booth School of Business', years: '2021–2024', note: 'M7 Business School', flag: '🇺🇸', lang: 'English' },
+  { degree: 'MSc in Law & Finance', school: 'University of Oxford', years: '2017–2018', note: 'Merit Scholarship (top 5%), 12% acceptance rate', flag: '🇬🇧', lang: 'English' },
+  { degree: 'Assistant Professor', school: 'Kozminski Business School', years: '2016–2017', note: '"Academically qualified" (<5% of faculty)', flag: '🇵🇱', lang: 'English' },
+  { degree: 'Postdoc', school: 'University of Neuchâtel', years: '2015–2016', note: 'Swiss NCCR scholarship', flag: '🇨🇭', lang: 'English' },
+  { degree: 'PhD in Behavioural Sciences', school: 'University of Amsterdam', years: '2012–2015', note: 'Fast-track: 5 years in 2.5. Top 1% by publications', flag: '🇳🇱', lang: 'English/Dutch' },
+  { degree: 'Bachelor & Master of Laws', school: 'European School of Law & Administration', years: '2012–2016', note: 'Fast-track: 5.5 years in 3 years, 300 ECTS', flag: '🇵🇱', lang: 'Polish' },
+  { degree: 'BSc & MSc Economic Psychology', school: 'University of Warsaw', years: '2009–2012', note: 'Fast-track: 5.5 years in 2.5 years, 309 ECTS', flag: '🇵🇱', lang: 'English' },
+  { degree: 'Visiting Scholar', school: 'KU Leuven', years: '2014', note: 'Research collaboration, Belgium', flag: '🇧🇪', lang: 'English' },
+  { degree: 'Research Assistant', school: 'Autonomous University of Madrid', years: '2011–2012', note: 'Erasmus exchange, taught in Spanish', flag: '🇪🇸', lang: 'Spanish' },
+  { degree: 'High School Diploma', school: 'Paisley High School, Oregon, USA', years: '2009', note: 'Valedictorian, GPA 4.0/4.0', flag: '🇺🇸', lang: 'English' },
+];
+
+const certifications = [
+  { name: 'Finance & Valuation Modelling Certificate', institution: 'Oxford Saïd Finance Lab', detail: 'GPA: 95%' },
+  { name: 'Asset Management Master Classes', institution: 'Oxford Saïd Business School', detail: '3% acceptance rate' },
+  { name: 'DELE C2 — Diploma de Español', institution: 'Ministry of Education, Spain', detail: 'Highest-level Spanish proficiency' },
+  { name: 'NT2-II — Nederlands als Tweede Taal', institution: 'Dutch Ministry of Education', detail: 'Advanced Dutch proficiency' },
+];
+
+const languages = [
+  { lang: 'English', level: 'Native/Bilingual (C2)', width: '100%' },
+  { lang: 'Polish', level: 'Native', width: '100%' },
+  { lang: 'Spanish', level: 'Fluent (C2, DELE)', width: '95%' },
+  { lang: 'Dutch', level: 'Advanced (C1, NT2-II)', width: '80%' },
+  { lang: 'French', level: 'Basic (A2)', width: '20%' },
+];
+---
+
+<section id="education" class="py-section px-6 md:px-10 max-w-5xl mx-auto relative section-glow">
+  <SectionTitle title="8 Degrees. 4 Languages. 6 Countries." />
+
+  <!-- Degrees list -->
+  <div class="space-y-3 mb-16 reveal">
+    {degrees.map((d) => (
+      <div class="flex items-start gap-4 card-glass rounded-xl p-4 md:p-5 group">
+        <span class="text-2xl flex-shrink-0 mt-0.5">{d.flag}</span>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+            <h3 class="font-display text-base md:text-lg font-semibold text-text-primary group-hover:text-champagne transition-colors">{d.degree}</h3>
+            <span class="font-mono text-xs text-gold-500">{d.years}</span>
+          </div>
+          <p class="text-sm text-text-secondary">{d.school}</p>
+          <p class="text-xs text-text-muted mt-1">{d.note} &middot; {d.lang}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Certifications (was missing) -->
+  <h3 class="font-display text-xl font-semibold text-text-primary mb-6 reveal">Additional Certifications</h3>
+  <div class="grid md:grid-cols-2 gap-3 mb-16 reveal-stagger">
+    {certifications.map((c) => (
+      <div class="card-glass rounded-xl p-4 group">
+        <h4 class="text-sm font-medium text-text-primary group-hover:text-champagne transition-colors">{c.name}</h4>
+        <p class="text-xs text-text-secondary mt-1">{c.institution}</p>
+        <span class="inline-block text-[10px] text-gold-500/70 font-mono mt-1.5">{c.detail}</span>
+      </div>
+    ))}
+  </div>
+
+  <!-- Languages -->
+  <h3 class="font-display text-xl font-semibold text-text-primary mb-6 reveal">Languages</h3>
+  <div class="space-y-4 max-w-lg reveal">
+    {languages.map((l) => (
+      <div>
+        <div class="flex justify-between text-sm mb-1.5">
+          <span class="text-text-primary">{l.lang}</span>
+          <span class="text-text-muted text-xs font-mono">{l.level}</span>
+        </div>
+        <div class="h-1.5 bg-bg-elevated rounded-full overflow-hidden">
+          <div class="h-full rounded-full transition-all duration-1000"
+               style={`width: ${l.width}; background: linear-gradient(90deg, #D4A520, #F2DFA7);`}></div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

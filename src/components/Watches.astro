@@ -1,0 +1,55 @@
+---
+import SectionTitle from './ui/SectionTitle.astro';
+---
+
+<section id="watches" class="py-section px-6 md:px-10 max-w-5xl mx-auto relative">
+  <SectionTitle title="Timepieces" />
+
+  <div class="grid md:grid-cols-5 gap-8 items-center reveal">
+    <!-- Photo placeholder with luxury feel -->
+    <div class="md:col-span-3 relative rounded-xl overflow-hidden aspect-square group md:mt-12">
+      <div class="absolute inset-0 bg-bg-card"></div>
+      <!-- Radial glow effect -->
+      <div class="absolute inset-0 bg-gradient-to-br from-gold-500/[0.05] via-transparent to-gold-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div class="relative z-10 flex items-center justify-center h-full">
+        <div class="text-center text-text-muted">
+          <div class="text-5xl mb-4 opacity-20">⌚</div>
+          <p class="text-sm">AP Royal Oak photo</p>
+          <p class="text-[10px] mt-1 font-mono text-gold-500/40">src/assets/images/ap-royal-oak.webp</p>
+        </div>
+      </div>
+      <!-- Corner frame accents -->
+      <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold-500/20"></div>
+      <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold-500/20"></div>
+    </div>
+
+    <!-- Description -->
+    <div class="md:col-span-2">
+      <div class="font-mono text-[10px] text-gold-500 tracking-[0.2em] uppercase mb-3">Collection</div>
+      <h3 class="font-display text-3xl md:text-4xl font-semibold text-text-primary mb-2">
+        Audemars Piguet
+      </h3>
+      <h3 class="font-display text-3xl md:text-4xl font-semibold text-champagne mb-6">
+        Royal Oak
+      </h3>
+      <p class="text-text-secondary text-sm leading-relaxed mb-8">
+        Full gold "Brick" — the iconic jumbo reference.
+        The Royal Oak, designed by Gérald Genta in 1972,
+        redefined luxury watchmaking with its octagonal bezel
+        and integrated bracelet.
+      </p>
+      <div class="flex gap-8">
+        {[
+          { value: '18K', label: 'Yellow Gold' },
+          { value: '39mm', label: 'Case Size' },
+          { value: 'AP', label: 'Manufacture' },
+        ].map((s) => (
+          <div class="text-center">
+            <div class="font-mono text-lg text-gold-500 font-semibold">{s.value}</div>
+            <div class="text-[10px] text-text-muted uppercase tracking-wider mt-0.5">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+reviews:
+  auto_review:
+    enabled: true
+    base_branches:
+      - main
+  path_filters:
+    - "src/**"
+    - "!node_modules/**"
+    - "!dist/**"
+    - "!.astro/**"
+  path_instructions:
+    - path: "src/components/*.astro"
+      instructions: |
+        Review for:
+        - Accessibility (alt tags, ARIA labels, semantic HTML)
+        - Responsive design (mobile-first, clamp() usage)
+        - Consistent design system (gold-500 accents, bg-bg-card backgrounds, font-display for headings)
+        - No hardcoded colors outside the Tailwind theme
+    - path: "src/components/ui/*.astro"
+      instructions: |
+        These are reusable UI primitives. Review for:
+        - Props interface completeness
+        - Slot usage for composition
+        - No side effects or data fetching
+    - path: "src/islands/*.tsx"
+      instructions: |
+        React islands loaded via client:visible in Astro. Review for:
+        - useEffect cleanup (IntersectionObserver disconnect)
+        - No unnecessary re-renders
+        - Should be lightweight (these are the ONLY JS shipped to client)
+    - path: "src/data/*.json"
+      instructions: |
+        Static data files. Verify:
+        - All URLs are valid and point to correct resources
+        - Citation counts are plausible
+        - No sensitive personal info (phone numbers are intentional)
+    - path: "src/layouts/Layout.astro"
+      instructions: |
+        Base layout with SEO. Verify:
+        - JSON-LD Person schema is valid
+        - OpenGraph tags are complete
+        - Font preload paths resolve correctly after npm install
+    - path: "src/styles/global.css"
+      instructions: |
+        Global styles. Verify:
+        - No !important usage
+        - CSS custom properties align with Tailwind config
+        - Scrollbar and selection styles are cross-browser safe
+
+chat:
+  auto_reply: true

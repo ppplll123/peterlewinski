@@ -1,0 +1,129 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Dr. Peter Lewinski, EMBA — AI & Deep Tech Executive',
+  description = 'Ex-Professor & Bank Director with 8 University Degrees in 4 Languages from 6 Countries. PhD (Amsterdam), MSc (Oxford), EMBA (Chicago Booth). 2,300+ Google Scholar citations. Marie Curie Fellow. Judo Black Belt.',
+  image = '/og-image.svg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- JSON-LD Person Schema (for Google Knowledge Panel) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. Peter Lewinski",
+      "givenName": "Peter",
+      "familyName": "Lewinski",
+      "honorificPrefix": "Dr.",
+      "honorificSuffix": "EMBA",
+      "jobTitle": "CEO & Founder",
+      "description": "AI & Deep Tech Executive. PhD in Behavioral Science, MSc from Oxford, EMBA from Chicago Booth.",
+      "url": "https://peterlewinski.com",
+      "image": "https://peterlewinski.com/images/peter-lewinski.jpg",
+      "email": "peter.lewinski@gmail.com",
+      "telephone": "+971585835930",
+      "nationality": "Dutch",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Chicago Booth School of Business",
+          "url": "https://www.chicagobooth.edu"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Oxford",
+          "url": "https://www.ox.ac.uk"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Amsterdam",
+          "url": "https://www.uva.nl"
+        }
+      ],
+      "knowsLanguage": ["English", "Spanish", "Dutch", "Polish"],
+      "sameAs": [
+        "https://www.linkedin.com/in/peterlewinski-phd",
+        "https://scholar.google.com/citations?user=EzMytF4AAAAJ",
+        "https://www.researchgate.net/profile/Peter-Lewinski",
+        "https://www.instagram.com/lewinski.peter/",
+        "https://github.com/ppplll123",
+        "https://www.semanticscholar.org/author/Peter-Lewinski/6402753"
+      ],
+      "award": [
+        "Marie Skłodowska-Curie Fellowship (European Commission)",
+        "NMSBA Neurotalent of the Year"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    })} />
+
+  </head>
+
+  <body class="bg-bg-primary text-text-primary font-body antialiased">
+    <slot />
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => observer.observe(el));
+
+      // Parallax on hero background orbs
+      const heroOrbs = document.querySelectorAll('.parallax-slow');
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        heroOrbs.forEach((orb) => {
+          (orb as HTMLElement).style.transform = `translateY(${y * 0.15}px)`;
+        });
+      }, { passive: true });
+    </script>
+  </body>
+</html>
